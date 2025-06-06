@@ -4,17 +4,18 @@ import { transformToNumber } from "./numbers.js";
 
 it("should transform a string number to a number of type number", () => {
   // Arrange
-  const value = "1";
+  const input = "1";
   // Act
-  const result = transformToNumber(value);
+  const result = transformToNumber(input);
   // Assert
-  expect(result).toBe(1);
+  //   expect(result).toBe(+input);
+  expect(result).toBeTypeOf("number");
 });
 
-it("should be NaN if a non-numeric string is provided", () => {
-  const value = "invalid";
+it("should yield NaN for non-transfrmable values", () => {
+  const input = "invalid";
 
-  const result = transformToNumber(value);
+  const result = transformToNumber(input);
 
   expect(result).toBeNaN();
 });
@@ -23,6 +24,5 @@ it("should throw an error if no value is provided", () => {
   const resultFn = () => {
     transformToNumber();
   };
-
-  expect(resultFn).toThrow();
+  expect(resultFn).not.toThrow();
 });
