@@ -7,8 +7,8 @@ const form = document.querySelector("form");
 function formSubmitHandler(event) {
   event.preventDefault();
   const numberValues = extractEnteredNumberValues(form);
-
   const result = calculateResult(numberValues);
+  console.log(result);
   const resultText = generateResultText(result);
 
   outputResult(resultText);

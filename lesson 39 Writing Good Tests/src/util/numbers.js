@@ -4,7 +4,7 @@ export function transformToNumber(value) {
   return +value;
 }
 
-export function cleanNumbers(numbersValues) {
+export function cleanNumbers(numberInputs) {
   const numbers = [];
   for (const numberInput of numberInputs) {
     validateStringNotEmpty(numberInput);
