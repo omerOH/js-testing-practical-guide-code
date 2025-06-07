@@ -14,7 +14,6 @@ export function calculateResult(numberValues) {
   let result = "";
   try {
     const numbers = cleanNumbers(numberValues);
-    console.log(numbers);
     result = add(numbers).toString();
   } catch (error) {
     result = error.message;
